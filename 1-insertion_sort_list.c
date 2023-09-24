@@ -11,9 +11,13 @@ void swap_node(listint_t **list, listint_t *ptr);
  */
 void insertion_sort_list(listint_t **list)
 {
-	listint_t *tmp = *list, *ptr = *list;
+	listint_t *tmp, *ptr;
 	int swapped = 0;
 
+	if (!list || !(*list))
+		return;
+	tmp = *list;
+	ptr = *list;
 	while (tmp->next)
 	{
 		ptr = tmp;
